@@ -4,6 +4,7 @@ from json import load
 input_name = '../Temp/fi.csv'
 output_name = '../Temp/fo.csv'
 # yo_check = False
+test
 
 data = load(open('person.js'))
 for p in data['blank']:
