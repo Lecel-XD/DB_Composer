@@ -3,6 +3,8 @@ class Employee:
         dictionary = {}
         for x, y in lst:
             x, y = x.strip(), y.strip()
+            if (x == 'Должность') and (y == ''):
+                raise TimeoutError('Поле пустое')
             if not y:
                 dictionary[x] = dictionary.get(x, 0)
             elif y[0].isalpha():
@@ -19,4 +21,8 @@ class Employee:
     def Export(self):
         pass
     def Merge(self, obj):
-        pass
+        for key, value in obj._arguments:
+            if type(value) == str:
+                continue
+            else:
+                self._arguments[key] += value
